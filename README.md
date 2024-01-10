@@ -28,7 +28,7 @@ Para manter o script rodando a cada dois minutos para saber se você está ouvin
 
 Primeiro, salve o seguinte código em `/etc/systemd/system/mastofm.service`:
 
-``` ini
+``` ini
 [Unit]
 Description=Mastodon Now Playing
 After=network-online.target
