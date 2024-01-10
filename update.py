@@ -1,16 +1,17 @@
 from pprint import pprint
 from mastodon import Mastodon
 import pylast
+import os
 
-LAST_API_KEY = ''
+LAST_API_KEY = os.environ['LAST_API_KEY']
 
-MAST_ACC_TOKEN = ''
-INSTANCE_URL = ''
+MAST_ACC_TOKEN = os.environ['MAST_ACC_TOKEN']
+INSTANCE_URL = os.environ['INSTANCE_URL']
 
 
 def now_listening_str():
     network = pylast.LastFMNetwork(api_key=LAST_API_KEY)
-    user = pylast.User('gmgall', network)
+    user = pylast.User(os.environ['LAST_USER'], network)
     now_playing = user.get_now_playing()
     if not now_playing: return None
     track_name = now_playing.get_title()
