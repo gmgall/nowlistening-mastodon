@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    mastofm:
+        init: true
+        container_name: mastofm
+        image: mastofm:latest
+        restart: unless-stopped
+        environment:
+            - PYTHONUNBUFFERED=true
+            - LAST_API_KEY=<insira aqui>
+            - LAST_USER=<insira aqui>
+            - MAST_ACC_TOKEN=<insira aqui>
+            - INSTANCE_URL=<insira aqui>
