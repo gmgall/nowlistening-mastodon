@@ -77,6 +77,16 @@ systemctl enable --now mastofm.timer
 
 O _timer_ será executado a cada dois minutos e, se você estiver ouvindo alguma coisa, o nome da música aparecerá em seu perfil. Lembre de alterar `/opt/mastofm/` pelo caminho da pasta onde o arquivo `update.py` está.
 
+## Usando com o Docker
+
+Gere uma imagem Docker com o arquivo `Dockerfile` e suba o script após editar o arquivo `docker-compose.yml`, ambos adicionados ao repositório. Para que a imagem do contêiner Docker seja gerada, execute o seguinte comando:
+
+``` bash
+docker build -t mastofm:latest .
+```
+
+Depois de editar o arquivo `docker-compose.yml`, suba o contêiner com o comando: `docker-compose up -d`.
+
 ## To Do
 
 Para virar um serviço web que o usuário possa simplesmente autorizar a atualizar sua conta falta... quase tudo. 😅
